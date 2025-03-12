@@ -1,0 +1,256 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f9f7f5;
+    color: #3a3a3a;
+    position: relative;
+}
+
+/* Background container */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Invitation container */
+.invitation-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.invitation-card {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Inner content */
+.inner-content {
+    width: 70%;
+    max-width: 500px;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Join us text */
+.join-us p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #4a5741;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Wedding of text */
+.wedding-of h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: #4a5741;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Couple names */
+.couple-names {
+    margin-bottom: 30px;
+}
+
+.couple-names h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #4a5741;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.bride, .groom {
+    margin-bottom: 5px;
+}
+
+.and-divider {
+    margin: 8px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.and-divider span {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    color: #666;
+    padding: 0 10px;
+    position: relative;
+}
+
+/* Wedding details */
+.wedding-details {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    color: #4a5741;
+    line-height: 1.6;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.wedding-details p {
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.date, .venue {
+    font-weight: 500;
+    color: #4a5741;
+    font-size: 0.8rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.join-us {
+    animation: slideDown 1s ease-out 0.5s both;
+}
+
+.wedding-of {
+    animation: fadeIn 1.5s ease-out 0.8s both;
+}
+
+.couple-names {
+    animation: scaleIn 1.5s ease-out 1.2s both;
+}
+
+.and-divider span {
+    animation: fadeIn 1.5s ease-out 1.5s both;
+}
+
+.wedding-details {
+    animation: slideUp 1.5s ease-out 1.8s both;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .inner-content {
+        width: 80%;
+    }
+    
+    .wedding-of h1 {
+        font-size: 1.8rem;
+    }
+    
+    .couple-names h2 {
+        font-size: 1.6rem;
+    }
+    
+    .and-divider span {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .invitation-card {
+        width: 100%;
+    }
+    
+    .inner-content {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    
+    .inner-content {
+        width: 85%;
+    }
+    
+    .wedding-of h1 {
+        font-size: 1.6rem;
+    }
+    
+    .couple-names h2 {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+    
+    .and-divider span {
+        font-size: 1.4rem;
+    }
+    
+    .wedding-details p {
+        font-size: 0.7rem;
+        letter-spacing: 1.5px;
+        line-height: 1.8;
+    }
+}
