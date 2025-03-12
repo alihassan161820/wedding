@@ -89,17 +89,20 @@ body {
     font-size: 0.8rem;
     letter-spacing: 3px;
     color: #4a5741;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 500;
+    text-transform: uppercase;
 }
 
 /* Wedding of text */
 .wedding-of h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
     color: #4a5741;
     margin-bottom: 20px;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 /* Couple names */
@@ -108,13 +111,21 @@ body {
 }
 
 .couple-names h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
+    font-family: 'Parisienne', cursive;
+    font-size: 3.2rem;
     color: #4a5741;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     line-height: 1.3;
-    font-weight: 500;
-    text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.couple-names .groom {
+    font-family: 'Parisienne', cursive;
+}
+
+.couple-names .bride {
+    font-family: 'Parisienne', cursive;
 }
 
 .bride, .groom {
@@ -427,10 +438,10 @@ body {
     
     .inner-content {
         width: 90%;
-        background-color: rgba(255, 255, 255, 0.7);
+        /* background-color: rgba(255, 255, 255, 0.7); */
         border-radius: 15px;
         padding: 25px 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
     }
     
     .calligraphy-img {
@@ -438,12 +449,16 @@ body {
         margin-bottom: 10px;
     }
     
+    .join-us p {
+        font-size: 0.7rem;
+    }
+    
     .wedding-of h1 {
-        font-size: 1.6rem;
+        font-size: 0.7rem;
     }
     
     .couple-names h2 {
-        font-size: 1.4rem;
+        font-size: 2.4rem;
         line-height: 1.4;
     }
     
