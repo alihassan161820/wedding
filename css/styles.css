@@ -8,7 +8,8 @@
 html, body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 body {
@@ -42,10 +43,11 @@ body {
 /* Invitation container */
 .invitation-container {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
 }
 
 .invitation-card {
@@ -55,6 +57,7 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    padding: 20px 0;
 }
 
 /* Inner content */
@@ -69,6 +72,15 @@ body {
     align-items: center;
     position: relative;
     animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Arabic Calligraphy Image */
+.calligraphy-img {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    animation: fadeIn 1.5s ease-out 0.5s both;
 }
 
 /* Join us text */
@@ -133,6 +145,7 @@ body {
     line-height: 1.6;
     width: 100%;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .wedding-details p {
@@ -147,6 +160,137 @@ body {
     font-size: 0.8rem;
 }
 
+/* Countdown styles */
+.countdown-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    animation: fadeIn 1.5s ease-out 2.2s both;
+}
+
+.countdown-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: #4a5741;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 50px;
+}
+
+.countdown-item span:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4a5741;
+}
+
+.countdown-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Map button styles */
+.map-button-container {
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-out 2.5s both;
+}
+
+.map-button {
+    background-color: #4a5741;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: #5d6e52;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Music Controls */
+.music-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    animation: fadeIn 1.5s ease-out 3s both;
+}
+
+.music-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(74, 87, 65, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(93, 110, 82, 0.9);
+}
+
+.music-button.playing {
+    animation: pulse 2s infinite;
+}
+
+.music-button.attention {
+    animation: attention 1.5s ease-in-out infinite;
+}
+
+.music-tooltip {
+    position: absolute;
+    background-color: rgba(74, 87, 65, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.music-button:hover .music-tooltip {
+    opacity: 1;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -156,6 +300,18 @@ body {
 @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes attention {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
 }
 
 @keyframes slideDown {
@@ -208,31 +364,78 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+    }
+    
     .background-image {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+    }
+    
+    .invitation-container {
+        padding: 40px 0;
     }
     
     .invitation-card {
         width: 100%;
+        padding: 30px 0;
     }
     
     .inner-content {
-        width: 80%;
+        width: 90%;
         padding: 20px;
+    }
+    
+    .calligraphy-img {
+        width: 70%;
+        margin-bottom: 15px;
+    }
+    
+    .music-container {
+        bottom: 15px;
+        right: 15px;
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        overflow-y: auto;
+    }
+    
+    .background-container {
+        position: fixed;
+        height: 100%;
+    }
+    
     .background-image {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
+        opacity: 0.95;
+    }
+    
+    .invitation-container {
+        min-height: 100vh;
+        padding: 30px 0;
+    }
+    
+    .invitation-card {
+        padding: 20px 0;
     }
     
     .inner-content {
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 15px;
+        padding: 25px 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .calligraphy-img {
         width: 85%;
+        margin-bottom: 10px;
     }
     
     .wedding-of h1 {
@@ -252,5 +455,37 @@ body {
         font-size: 0.7rem;
         letter-spacing: 1.5px;
         line-height: 1.8;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 40px;
+    }
+    
+    .countdown-item span:first-child {
+        font-size: 1.2rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.5rem;
+    }
+    
+    .music-container {
+        bottom: 10px;
+        right: 10px;
+    }
+    
+    .music-button {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .map-button {
+        padding: 8px 16px;
+        font-size: 0.65rem;
     }
 }

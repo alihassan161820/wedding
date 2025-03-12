@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isabel & Chad's Wedding</title>
+    <title>Abdallziz & R's Wedding</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="background-container">
         <img src="images/bk.jpeg" alt="Floral background" class="background-image">
     </div>
+    
+    <div class="music-container">
+        <button id="music-toggle" class="music-button">
+            <i class="fas fa-music"></i>
+            <span class="music-tooltip">Play Wedding Music</span>
+        </button>
+        <audio id="background-music" autoplay >
+            <source src="audio/wedding-music1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
     <div class="invitation-container">
         <div class="invitation-card">
             <div class="inner-content">
+                <img src="images/arabic-caliigraphy.svg" alt="بسم الله الرحمن الرحيم - و خلقناكم أزواجا" class="calligraphy-img animate__animated animate__fadeIn">
+
                 <div class="join-us">
                     <p>SAVE THE DATE</p>
                 </div>
@@ -31,8 +45,30 @@
                     <p class="date">Monday, APRIL 07, 2025</p>
                     <p class="time">8:00 PM</p>
                     <p class="venue">123 ANYWHERE ST.</p>
-                    <p class="location">ANY CITY</p>
-                    <p class="reception">RECEPTION TO FOLLOW</p>
+                </div>
+                <div class="countdown-container">
+                    <div class="countdown-title">Countdown to our special day</div>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-button-container">
+                    <button class="map-button" onclick="openMap()">View Location on Map</button>
                 </div>
             </div>
         </div>
