@@ -17,6 +17,7 @@ body {
     background-color: #f9f7f5;
     color: #3a3a3a;
     position: relative;
+    min-height: 100vh;
 }
 
 /* Background container */
@@ -39,6 +40,8 @@ body {
     object-fit: cover;
     object-position: center;
     filter: brightness(0.95);
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 /* Invitation container */
@@ -49,6 +52,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    position: relative;
+    z-index: 1;
 }
 
 .invitation-card {
@@ -426,6 +431,9 @@ body {
     .background-container {
         position: fixed;
         height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
     }
     
     .background-image {
@@ -433,6 +441,10 @@ body {
         height: 100%;
         object-fit: cover;
         opacity: 0.95;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
     }
     
     .invitation-container {
