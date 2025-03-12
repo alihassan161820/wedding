@@ -199,11 +199,6 @@ function formatTime(time) {
 
 // Function to open location on map
 function openMap() {
-    // Using a generic location for demonstration
-    // In a real implementation, you would use the actual coordinates
-    const address = '123 Anywhere St., Any City';
-    const encodedAddress = encodeURIComponent(address);
-    
     // Open in Google Maps
-    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+    window.open(`https://maps.app.goo.gl/htjMkiRwJLTutbyT9`, '_blank');
 }
