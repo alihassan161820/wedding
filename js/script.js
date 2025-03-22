@@ -200,5 +200,5 @@ function formatTime(time) {
 // Function to open location on map
 function openMap() {
     // Open in Google Maps
-    window.open(`https://maps.app.goo.gl/htjMkiRwJLTutbyT9`, '_blank');
+    window.open(`https://maps.app.goo.gl/aJCcsANcC3RtntXWA`, '_blank');
 }
